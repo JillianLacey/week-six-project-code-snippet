@@ -1,0 +1,32 @@
+{
+  "name": "week-six-project-code-snippet",
+  "version": "1.0.0",
+  "description": "Code Snippet Organizer Build an organizer for holding your and others' code snippets.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JillianPichocki/week-six-project-code-snippet.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JillianPichocki/week-six-project-code-snippet/issues"
+  },
+  "homepage": "https://github.com/JillianPichocki/week-six-project-code-snippet#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "bluebird": "^3.5.0",
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "express-session": "^1.15.5",
+    "jest": "^21.0.1",
+    "mongoose": "^4.10.8",
+    "morgan": "^1.8.2",
+    "mustache-express": "^1.2.5",
+    "supertest": "^3.0.0"
+  }
+}
