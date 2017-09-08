@@ -16,15 +16,19 @@
         <a href="/auth/signup">Sign Up</a>
         <a href="/auth/logout">Logout</a>
     </nav>
+
     <h1> This is the index page! Are you excited?!</h1>
+
+
+
     <div>
-        <form action="/auth/createNew" method="POST">
+        <form action="/createNew" method="POST">
             <input type="text" name="title" placeholder="title" autocomplete="off" required><br>
             <label>Language</label><br>
             <select type="select" name="language" placeholder="language" autocomplete="off">
                 <option value="CSS">CSS</option>
                 <option value="HTML">HTML</option>
-                <option value="Javascript/JSON">JavaScript/JSON</option>
+                <option value="JavaScript">JavaScript</option>
                 <option value="SQL">SQL</option>
                 <option value="Ruby">Ruby</option>
             </select><br>
@@ -33,29 +37,48 @@
             <input type="text" name="tag" placeholder="Tag 1">
             <input type="text" name="tag" placeholder="Tag 2">
             <input type="text" name="tag" placeholder="Tag 3">
-
             <button type="Submit">Create Snippet!</button>
 
         </form>
 
     </div>
 
+    <br><br> <br><br>
 
 
-    {{#codeSnippetOrganizer}}
-    <div class="entry-styles">
+
+
+    <div>
+        <form action="/language" method="POST">
+            <label>Search Snippets by Language</label><br>
+            <select type="select" name="language" placeholder="language" autocomplete="off">
+                <option value="CSS">CSS</option>
+                <option value="HTML">HTML</option>
+                <option value="JavaScript">JavaScript/JSON</option>
+                <option value="SQL">SQL</option>
+                <option value="Ruby">Ruby</option>
+            </select><br>
+            <input type="text" name="tag" placeholder="search tags">
+            <button type="Submit">Search Snippets</button>
+        </form>
+    </div>
+
+    <br><br> <br><br> {{#snippets}}
+    <div>
         <a href="/codeSnippet/{{_id}}">
             <h1>{{title}}</h1>
         </a>
         <p>Notes: {{notes}}</p>
         <p>language: {{language}}</p>
-
         <p>Tag:{{tag}}</p>
-
         <p>Body: {{body}}</p>
-
     </div>
-    <br> {{/codeSnippetOrganizer}}
+    {{/snippets}}
+
+
+
+
+
 
 
 

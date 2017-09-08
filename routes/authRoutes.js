@@ -10,6 +10,8 @@ authRoutes.get("/signup", (req, res) => {
 });
 
 
+
+
 //////////////////////SIGN UP/////////////////////
 
 authRoutes.post("/signup", (req, res) => {
@@ -56,17 +58,9 @@ authRoutes.post("/login", (req, res) => {
     });
 });
 
-/////////////////////CREATE NEW SNIPPET/////////////////////
 
-authRoutes.post("/createNew", (req, res) => {
-    let newSnippet = new Snippet(req.body);
-    newSnippet.save()
-        .then(function (savedSnippet) {
-            res.redirect("/");
-        })
-        .catch(function (err) {
-            if (!savedUser) res.status(500).send("Error saving Snippet!");
-        });
-})
+
+
+
 
 module.exports = authRoutes;

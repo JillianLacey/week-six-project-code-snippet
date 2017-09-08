@@ -40,7 +40,10 @@ app.use(session(sessionConfig));
 //ROUTES
 
 app.use("/auth", authRoutes);
+// app.use("/:other", function(){})
+// app.use("/", indexRoutes);
 app.use("/", checkAuth, indexRoutes);
+
 // app.use("/login", authRoutes);
 
 
