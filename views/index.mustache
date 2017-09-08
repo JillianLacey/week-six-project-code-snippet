@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/main.css">
+    <title>Code Snippets Index</title>
+</head>
+
+<body>
+    <nav>
+        <a href="/">All Snippets</a>
+        <a href="/user/profile">My Snippets</a>
+        <a href="/auth/login">Search Snippets</a>
+        <a href="/auth/signup">Create a Snippet</a>
+        <a href="/auth/login">Login</a>
+        <a href="/auth/signup">Sign Up</a>
+        <a href="/auth/logout">Logout</a>
+    </nav>
+    <h1> This is the index page! Are you excited?!</h1>
+
+    {{#codeSnippetOrganizer}}
+    <div class="entry-styles">
+        <a href="/vinylcollection/{{_id}}">
+            <h1>{{name}}</h1>
+        </a>
+        <p>Artist Name: &nbsp; {{name}}</p>
+        <p>Album Name: &nbsp; {{albumName}}</p>
+        <p>Condition: &nbsp;{{condition}}</p>
+        <p>Is it signed? &nbsp; {{#signed}} Yes {{/signed}} {{^signed}} No {{/signed}}</p>
+        <p>Value: &nbsp;{{value}}</p>
+        <p>For sale? &nbsp; {{#forSale}} Yes {{/forSale}} {{^forSale}} No {{/forSale}}</p>
+        <p>Genre: {{#genre}}&nbsp; {{.}}&nbsp;{{/genre}}</p>
+        <p>How many tracks? &nbsp; {{albumDetails.tracks}}</p>
+        <p>Release Year: &nbsp; {{albumDetails.releaseYear}}</p>
+        <p>RPM: &nbsp; {{albumDetails.rpm}}</p>
+    </div>
+    <br> {{/codeSnippetOrganizer}}
+
+
+
+
+
+
+</body>
+
+</html>
