@@ -1,22 +1,21 @@
 const express = require("express");
 const indexRoutes = express.Router();
 const User = require("../models/User");
-// const Snippet = require("../models/Snippet");
-
-
-
-//if user is not logged in redirect to the login page
-
-
-
-// indexRoutes.get("/index", (req, res) => {
-//     res.render("index", { users: req.session.user });
-// });
-
-
+const Snippet = require("../models/Snippet");
 
 indexRoutes.get("/", (req, res) => {
-    res.render("index")
+    User.find().then(foundUsers => {
+        // console.log(foundUsers);
+        if (!foundUsers) {
+            res.status(500).send(err);
+        }
+        res.render("index", { codeSnippetOrganizer: Snippet });//sets what the first page is
+    });
+})
+
+indexRoutes.get("/:trashroute", (req, res) => {
+    res.send("You've tried to visit a page that doesn't exist.");//sets what the first page is
+
 });
 
-module.exports = indexRoutes;   
+module.exports = indexRoutes;  

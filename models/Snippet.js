@@ -6,9 +6,11 @@ const snippetSchema = new Schema({
         type: String,
         required: true
     },
+    notes: String,
     language: {
         type: String,
-        required: true
+        required: true,
+        enum: ["CSS", "HTML", "JavaScript/JSON", "SQL", "Ruby"]
     },
     tag: {
         type: Array,
@@ -16,7 +18,7 @@ const snippetSchema = new Schema({
     body: {
         type: String,
         required: true
-    }
+    },
 
 });
 

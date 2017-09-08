@@ -8,7 +8,6 @@ const sessionConfig = require("./sessionConfig");
 const checkAuth = require("./middlewares/checkAuth");
 const indexRoutes = require("./routes/indexRoutes");
 const authRoutes = require("./routes/authRoutes");
-const userRoutes = require("./routes/userRoutes");
 const User = require("./models/User");
 const Snippet = require("./models/Snippet");
 
@@ -39,14 +38,10 @@ app.use(session(sessionConfig));
 
 
 //ROUTES
-// app.use("/", checkAuth, indexRoutes);    //I think this is where we put checkauth
-app.use("/", indexRoutes);
-app.use("/auth", authRoutes);
-// app.use("/user", checkAuth, userRoutes);
-app.use("/user", checkAuth, userRoutes);
-app.use("/login", authRoutes);
-app.use("/signup", authRoutes);
 
+app.use("/auth", authRoutes);
+app.use("/", checkAuth, indexRoutes);
+// app.use("/login", authRoutes);
 
 
 // PORT
